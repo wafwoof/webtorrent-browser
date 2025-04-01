@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'w95fa';
+  src: url('./fonts/w95fa.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'w95fa', sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.draggable {
+  -webkit-app-region: drag;
+  height: 32px;
+  width: 100%;
+}
+
+/* loading bar */
+#status {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+#progress-bar {
+  height: 8px;
+  background: linear-gradient(270deg, black, white);
+  background-size: 100% 100%;
+  animation: gradient 2s ease infinite;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+/* toolbar */
+header.tool-bar {
+  display: flex;
+  flex-direction: row;
+  padding-top: 2px;
+}
+header.tool-bar select,
+header.tool-bar button {
+  width: 100%;
+  max-width: 128px;
+  height: 32px;
+  padding: 8px;
+  border: 1px solid black;
+  border-bottom: 0;
+  border-radius: 0;
+  font-size: 12px;
+  outline: none;
+}
+header.tool-bar select:focus {
+  outline: none;
+  border-color: black;
+}
+header.tool-bar button {
+  width: fit-content;
+  border-right: 0;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+#add-bookmark {
+  border-right: 1px solid black;
+  border-left: 0;
+}
+
+/* search bar */
+header.search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+header.search-bar label {
+  font-size: 14px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+header.search-bar input {
+  width: 100%;
+  height: 32px;
+  padding: 8px;
+  border: 1px solid black;
+  border-bottom: 0;
+  border-top: 0;
+  border-radius: 0;
+  font-size: 12px;
+}
+header.search-bar input:focus {
+  outline: none;
+  border-color: black;
+}
+header.search-bar button {
+  width: 64px;
+  height: 32px;
+  padding: 10px;
+  background-color: black;
+  font-size: 14px;
+  color: white;
+  border: 1px solid black;
+  border-radius: 0;
+  cursor: pointer;
+}
+header.search-bar button:hover {
+  cursor: pointer;
+}
+
+/* content */
+.content {
+  width: 100%;
+  height: calc(100% - 70px);
+}
+.content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
