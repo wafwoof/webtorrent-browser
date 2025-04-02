@@ -2,9 +2,12 @@
 
 DISCLAIMER: This software comes with no warranty, it is a proof of concept. Do not download html files randomly, they could contain malicious embedded javascript.
 
-I have uploaded [prerelease v0.1](https://github.com/wafwoof/webtorrent-browser/releases) for folks running modern MacOS, but packaging for other platforms is very easy. Here is what it looks like currently:
+I have uploaded [release 0.1.1](https://github.com/wafwoof/webtorrent-browser/releases/tag/0.1.1) for folks running modern MacOS, but packaging for other platforms is very easy. I will work on building for more platforms soon.
 
-![v0.1 preview image](docs/image.png)
+## Gallery
+
+![v0.1.1 preview image 0](docs/image0.png)
+![v0.1.1 preview image 1](docs/image1.png)
 
 ## Why?
 

@@ -38,7 +38,7 @@ function setupAppWindow() {
   });
 
   window.loadFile(path.join(app.getAppPath(), "src/index.html"));
-  window.webContents.openDevTools();
+  // window.webContents.openDevTools();
 }
 
 // IPC Handler - Start Download
@@ -78,6 +78,29 @@ function ipcHandleStartDownload(event, torrentUrl) {
     }
   } catch (err) {
     console.error("Error checking torrent path:", err);
+  }
+
+  // check if the torrent has already been added to the client
+  const existingTorrent = client.torrents.find(torrent => {
+    // check for info hash
+    const magnetInfoHash = magnetURI.match(/xt=urn:btih:([^&]+)/i);
+    if (magnetInfoHash && magnetInfoHash[1]) {
+      return torrent.infoHash === magnetInfoHash[1].toLowerCase();
+    }
+    return torrent.infoHash === magnetURI;
+  });
+  if (existingTorrent) {
+    console.log("Torrent already added, skipping download");
+    const existingTorrentPath = existingTorrent.path.replace(/\+/g, " ");
+    console.log(
+      "Existing torrent path: ",
+      `${existingTorrentPath}/${existingTorrent.name}/`
+    );
+    event.reply(
+      "download-complete",
+      `${existingTorrentPath}/${existingTorrent.name}/`
+    );
+    return;
   }
 
   // attempt to add the torrent
@@ -179,8 +202,8 @@ function ipcHandleStartDownload(event, torrentUrl) {
       }
     });
   } catch (error) {
-    console.info("Error adding torrent:", error);
-    throw error;
+    console.info("An Error occurred adding torrent:", error);
+    // throw error;
   }
 }
 

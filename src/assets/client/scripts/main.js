@@ -22,28 +22,36 @@ function updateIframe(config) {
 }
 
 function reRenderIframe(url) {
+  document.querySelector("header section.logo img").classList.remove("spin");
   updateIframe({ src: url });
 }
 
 function renderBlank() {
-  updateIframe({ srcdoc: "webtorrent browser v0.1" });
+  updateIframe({
+    srcdoc: `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>wtb:blank</title>
+      </head>
+      <body>
+        <code>Welcome to WebTorrent Browser!</code>
+        <br />
+        <code>Hint: Click the bookmarks dropdown to see examples.</code>
+      </body>
+      </html>
+    `
+  });
 }
 
 function renderSpinner() {
+  document.querySelector("header section.logo img").classList.add("spin");
+  // todo: show loading percentage instead of meaningless spinner
   const spinnerHtml = `
-          <html>
-            <head>
-              <style>
-                body { display: flex; justify-content: center; align-items: center; height: 100vh; }
-                .spinner { border: 4px solid white; border-top: 4px solid black; border-radius: 50%; width: 40px; height: 40px; animation: spin 1.25s linear infinite; }
-                @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-              </style>
-            </head>
-            <body>
-              <div class="spinner"></div>
-            </body>
-          </html>
-        `;
+    <code class="spinner" id="loading-spinner"></code>
+  `;
   updateIframe({ srcdoc: spinnerHtml });
 }
 
@@ -76,6 +84,7 @@ function generateFileListingHtml(basePath, files) {
 }
 
 function renderDirectory(url) {
+  document.querySelector("header section.logo img").classList.remove("spin");
   console.log("Rendering directory:", url);
   window.electron.getFileList(url, fileList => {
     console.log("URL:", url);
@@ -292,5 +301,21 @@ torrentUrlInput.addEventListener("keydown", event => {
   if (event.key === "Enter") {
     event.preventDefault();
     document.getElementById("download").click();
+  }
+});
+
+// listener for seeding stats
+window.electron.onDownloadProgress(progress => {
+  // console.log("Download progress:", progress);
+  try {
+    let progressPercentage = Math.round(progress);
+    const iframe = document.getElementById("content");
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    iframeDoc.getElementById("loading-spinner").textContent =
+      progressPercentage + "%";
+  } catch (error) {
+    // console.error("Error updating progress:", error);
+    1 + 1; // no-op
+    return;
   }
 });

@@ -38,14 +38,59 @@ body {
   transition: width 0.5s ease;
 }
 
+/* header */
+header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+header > :nth-child(1),
+header > :nth-child(2) {
+  grid-column: 1;
+}
+header > :nth-child(3) {
+  max-width: 120px;
+  grid-column: 2;
+  grid-row: 1 / span 2; /* Make it span both rows */
+}
+
+/* header logo */
+header section.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+header section.logo img {
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+}
+/* spin animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+header section.logo img.spin {
+  animation: spin 0.75s ease-in-out infinite;
+}
+
 /* toolbar */
-header.tool-bar {
+header section.tool-bar {
   display: flex;
   flex-direction: row;
   padding-top: 2px;
 }
-header.tool-bar select,
-header.tool-bar button {
+header section.tool-bar select,
+header section.tool-bar button {
   width: 100%;
   max-width: 128px;
   height: 32px;
@@ -56,11 +101,11 @@ header.tool-bar button {
   font-size: 12px;
   outline: none;
 }
-header.tool-bar select:focus {
+header section.tool-bar select:focus {
   outline: none;
   border-color: black;
 }
-header.tool-bar button {
+header section.tool-bar button {
   width: fit-content;
   border-right: 0;
   background-color: white;
@@ -73,7 +118,7 @@ header.tool-bar button {
 }
 
 /* search bar */
-header.search-bar {
+header section.search-bar {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -82,12 +127,12 @@ header.search-bar {
   border-bottom: 1px solid black;
   border-top: 1px solid black;
 }
-header.search-bar label {
+header section.search-bar label {
   font-size: 14px;
   margin-right: 5px;
   margin-left: 5px;
 }
-header.search-bar input {
+header section.search-bar input {
   width: 100%;
   height: 32px;
   padding: 8px;
@@ -97,11 +142,11 @@ header.search-bar input {
   border-radius: 0;
   font-size: 12px;
 }
-header.search-bar input:focus {
+header section.search-bar input:focus {
   outline: none;
   border-color: black;
 }
-header.search-bar button {
+header section.search-bar button {
   width: 64px;
   height: 32px;
   padding: 10px;
@@ -112,7 +157,7 @@ header.search-bar button {
   border-radius: 0;
   cursor: pointer;
 }
-header.search-bar button:hover {
+header section.search-bar button:hover {
   cursor: pointer;
 }
 

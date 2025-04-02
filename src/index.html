@@ -10,52 +10,64 @@
     <!-- <div id="status">
       <div id="progress-bar"></div>
     </div> -->
-    <header class="tool-bar">
-      <div class="draggable" style="width: 75px"></div>
-      <button id="nav-back">Back</button>
-      <button id="nav-forward">Forward</button>
-      <select id="bookmarks">
-        <option value="" disabled selected hidden>Bookmarks</option>
-        <option
-          value="magnet:?xt=urn:btih:BW7XB6ODBVWFBRFQAFE37GVV44QAC3VO&dn=t2m-gh-pages"
-        >
-          torrent2magnet
-        </option>
-        <option
-          value="magnet:?xt=urn:btih:WHAUCNX6NZPH25XEL3YW5IR4SL4SZO3K&dn=dht-search-engines.html&xl=705"
-        >
-          a list of DHT search engines
-        </option>
-        <option
-          value="magnet:?xt=urn:btih:dd8255ecdc7ca55fb0bbf81323d87062db1f6d1c&dn=Big+Buck+Bunny&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fbig-buck-bunny.torrent"
-        >
-          big-buck-bunny.torrent
-        </option>
-        <option
-          value="magnet:?xt=urn:btih:a88fda5954e89178c372716a6a78b8180ed4dad3&dn=The+WIRED+CD+-+Rip.+Sample.+Mash.+Share&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fwired-cd.torrent"
-        >
-          wired-cd.torrent
-        </option>
-        <option
-          value="magnet:?xt=urn:btih:SU5BOMJUM7DDNJHNACF7CZEGXL3Z4NN4&dn=dht-test-20250316"
-        >
-          DHT Test Torrent 1
-        </option>
-      </select>
-      <button id="add-bookmark">Add Bookmark</button>
-      <div class="draggable" style="width: calc(100% - 386px)"></div>
-    </header>
+    <header>
+      <section class="tool-bar">
+        <div class="draggable" style="width: 75px"></div>
+        <button id="nav-back">Back</button>
+        <button id="nav-forward">Forward</button>
+        <select id="bookmarks">
+          <option value="" disabled selected hidden>Bookmarks</option>
+          <option
+            value="magnet:?xt=urn:btih:BW7XB6ODBVWFBRFQAFE37GVV44QAC3VO&dn=t2m-gh-pages"
+          >
+            torrent2magnet
+          </option>
+          <option
+            value="magnet:?xt=urn:btih:WHAUCNX6NZPH25XEL3YW5IR4SL4SZO3K&dn=dht-search-engines.html&xl=705"
+          >
+            a list of DHT search engines
+          </option>
+          <option
+            value="magnet:?xt=urn:btih:3HUAD3IEQTSYQIEEHCGGYWFVNGGHEWOD&dn=Wanderers.mp4&xl=5966361"
+          >
+            Wanderers Short Film (2014)
+          </option>
+          <option
+            value="magnet:?xt=urn:btih:a88fda5954e89178c372716a6a78b8180ed4dad3&dn=The+WIRED+CD+-+Rip.+Sample.+Mash.+Share&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fwired-cd.torrent"
+          >
+            wired-cd.torrent
+          </option>
+          <option
+            value="magnet:?xt=urn:btih:dd8255ecdc7ca55fb0bbf81323d87062db1f6d1c&dn=Big+Buck+Bunny&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fbig-buck-bunny.torrent"
+          >
+            Big Buck Bunny (public domain/CC0)
+          </option>
+          <option
+            value="magnet:?xt=urn:btih:209c8226b299b308beaf2b9cd3fb49212dbd13ec&dn=Tears+of+Steel&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Ftears-of-steel.torrent"
+          >
+            Tears of Steel (public domain/CC0)
+          </option>
+        </select>
+        <button id="add-bookmark">Add Bookmark</button>
+        <div class="draggable" style="width: calc(100% - 386px)"></div>
+      </section>
 
-    <header class="search-bar">
-      <label for="torrentUrl"> Address: </label>
-      <input type="text" id="torrentUrl" placeholder="magnet://" />
-      <button id="download">Go</button>
+      <section class="search-bar">
+        <label for="torrentUrl"> Address: </label>
+        <input type="text" id="torrentUrl" placeholder="magnet://" />
+        <button id="download">Go</button>
+      </section>
+
+      <section class="logo">
+        <img src="./assets/icon.png" alt="" draggable="false" />
+      </section>
     </header>
 
     <section class="content" id="content-parent">
-      <iframe id="content" srcdoc="webtorrent browser v0.1"></iframe>
+      <iframe id="content"></iframe>
     </section>
 
-    <script src="main.js"></script>
+    <script src="./assets/client/scripts/init.js"></script>
+    <script src="./assets/client/scripts/main.js"></script>
   </body>
 </html>
