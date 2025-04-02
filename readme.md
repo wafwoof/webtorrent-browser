@@ -1,8 +1,8 @@
-# Webtorrent Browser
+# WebTorrent Browser
 
-DISCLAIMER: This software comes with no warranty, it is a proof of concept. Do not download html files randomly, they could contain malicious embedded javascript.
+DISCLAIMER: This software comes with no warranty, it is a proof of concept. Do not download html files randomly, avoid running malicious embedded javascript if at all possible.
 
-I have uploaded [release 0.1.1](https://github.com/wafwoof/webtorrent-browser/releases/tag/0.1.1) for folks running modern MacOS, but packaging for other platforms is very easy. I will work on building for more platforms soon.
+I have uploaded [release 0.1.1](https://github.com/wafwoof/webtorrent-browser/releases/tag/0.1.1) for folks running modern arm64 MacOS, but packaging for other platforms is simple. I will work on providing more platforms in future releases.
 
 ## Gallery
 
